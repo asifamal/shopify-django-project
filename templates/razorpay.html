@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}
+Razorpay Checkout
+{% endblock title %} 
+{% block content %}
+
+<h1>Razorpay Checkout</h1>
+
+{% endblock content %} 
+{% block body %} 
+{% load static %}
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+    var options = {
+        "key": "{{ razorpay_key_id }}",
+        "amount": {{ amount }},
+        "currency": "INR",
+        "name": "Shopify",
+        "description": "Payment for your order",
+        "order_id": "{{ order_id }}",
+        "handler": function (response){
+            console.log(response);
+            window.location.href = "/razorpay-success/" + response.razorpay_payment_id + "/";
+            },
+        "prefill": {
+            "name": "{{ name }}",
+            "email": "{{ email }}",
+            "contact": "{{ phone }}"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+    };
+
+    var rzp1 = new Razorpay(options);
+    rzp1.on('payment.failed', function (response){
+        console.error(response.error.code);
+        console.error(response.error.description);
+        console.error(response.error.source);
+        console.error(response.error.step);
+        console.error(response.error.reason);
+        console.error(response.error.metadata.order_id);
+        console.error(response.error.metadata.payment_id);
+    });
+
+    document.addEventListener('DOMContentLoaded', function(){
+        rzp1.open();
+    });
+</script>
+
+{% endblock body %}

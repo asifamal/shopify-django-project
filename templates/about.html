@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+
+
+
+{% block body %}
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/assets/css/about.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>About Us</title>
+</head>
+<body>
+    
+   
+
+    <h2>About Us</h2>
+
+    <div class="para1">
+        <p>
+            "Welcome to Shopify Supermarket, where convenience meets quality.
+             Established with a passion for providing customers with a seamless shopping experience, 
+             Shopify Supermarket is your one-stop destination for all your grocery needs. Our shelves are stocked
+             with a diverse selection of fresh produce, pantry staples,
+             and household essentials. At Shopify, we prioritize customer satisfaction,
+             offering a curated range of high-quality products at competitive prices. 
+             Our dedicated team is committed to delivering exceptional service, and our mission goes beyond providing groceries; 
+             we aim to be an integral part of your daily life, making shopping a delight. Join us on this journey, and let Shopify
+             Supermarket be your trusted partner in nourishing your home and family."
+        </p>
+    </div>
+
+    
+    <img src="{% static 'images/interior desc.jpg' %}" alt="" class="img1">
+
+    <div class="flex2">
+        <div class="para2">
+            <h3 style="font-family: 'Open Sans', sans-serif;">Quality Assurance</h3>
+
+            <p>At Shopify, we understand the importance of quality in the products
+               you bring home. That's why we work tirelessly to source the freshest produce, 
+               the finest meats, and the best brands. Our team is dedicated to maintaining the highest standards, 
+               ensuring that every item on our shelves meets your expectations.
+            </p>
+        </div>
+
+        <div class="img2">
+            <img src="{% static 'images/fruits.jpg' %}" alt="" class="img-2-inner">
+        </div>
+    </div>
+    
+    <h2 style="text-decoration: none;">Contact Us</h2>
+
+    <div class="para4">
+
+        <p>
+            We love hearing from our customers! 
+            If you have any questions, suggestions, or feedback,
+            please don't hesitate to reach out to us. 
+            Visit our Contact Us page for information on how to get in touch.
+            Thank you for choosing Shopify. We look forward to serving you and being a part of your shopping journey.
+            Shopify - Your Neighborhood Supermarket
+        </p>
+
+    </div>
+
+    
+
+
+    
+   
+
+
+
+
+</body>
+</html>
+
+
+{% endblock body %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}My Profile{% endblock title %}
+{% block body %}
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h1>My Profile</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Name</th>
+                    <th>Items</th>
+                    <th>Amount</th>
+                    <th>Order Status</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order_detail in order_details %}
+                <tr>
+                    <td>{{ order_detail.order.order_id }}</td>
+                    <td>{{ order_detail.order.name }}</td>
+                    <td>{{ order_detail.order.items_json }}</td>
+                    <td>{{ order_detail.order.amount }}</td>
+                    <td>{{ order_detail.latest_update }}</td>
+                    <td>{{ order_detail.order.address1 }}, {{ order_detail.order.address2 }}, {{ order_detail.order.city }}, {{ order_detail.order.state }}, {{ order_detail.order.zip_code }}</td>
+                    <td>{{ order_detail.order.email }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock body %}
