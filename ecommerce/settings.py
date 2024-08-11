@@ -115,18 +115,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_USE_TLS = True
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'asifamal6@gmail.com'
-# EMAIL_HOST_PASSWORD = 'fipw xpqi atqs czr'
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'asifamal6@gmail.com'
-EMAIL_HOST_PASSWORD = 'zerp ydru tnxj vgce'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 
